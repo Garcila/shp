@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+.App {
+	text-align: center;
+	height: 100vh;
+
+	--white: #fff;
+	--black: #000;
+	--red: #ff0051;
+	--light-purple-lighter: #f4ecff;
+	--light-purple: #e4d2ff;
+	--light-purple-darker: #caaef2;
+	--dark-purple-lighter: #8456ff;
+	--dark-purple: #7e24fa;
+	--dark-purple-darker: #6624d2;
+
+	max-width: 1440px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/* grid-template-rows: 1fr; */
+	/* align-content: stretch; */
+}
