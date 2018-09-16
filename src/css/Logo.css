@@ -1,6 +1,6 @@
 .logo-container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
   justify-items: center;
   align-items: end;
   color: var(--white);

@@ -7,14 +7,34 @@ import twitterLogo from './images/logo-twitter.svg';
 export default class Login extends Component {
 	state = {
 		name: '',
-		password: ''
+		password: '',
+		loading: false,
+		passOk: true,
+		nameOk: true
 	};
 
 	handleSubmit = e => {
 		e.preventDefault();
-		setTimeout(e => {
-			alert(this.state.name);
-		}, 3000);
+		let password = this.state.password;
+		let name = this.state.name;
+		if (
+			password.length >= 8 &&
+			password.length <= 24
+			// &&
+			// name.length >= 8 &&
+			// name.length <= 24
+		) {
+			this.setState({ loading: true });
+			setTimeout(e => {
+				this.props.logIn();
+			}, 2000);
+		} else {
+			// if (this.state.password.length >= 8 && password.length <= 24) {
+			// 	this.setState({ nameOK: false });
+			// } else {
+			this.setState({ passOk: false });
+			// }
+		}
 	};
 
 	handleNameChange = e => {
@@ -26,28 +46,52 @@ export default class Login extends Component {
 		const password = e.target.value;
 		this.setState({ password });
 	};
+
 	render() {
+		const validationError = !this.state.passOk ? (
+			<div className="error-login">
+				password must be between 8 and 24 characters
+			</div>
+		) : (
+			''
+		);
 		return (
 			<div className="login">
-				<form className="login-form" onSubmit={this.handleSubmit}>
-					<input
-						className="form-username"
-						placeholder="username"
-						onChange={this.handleNameChange}
-						value={this.state.value}
-					/>
-					<input
-						className="form-password"
-						placeholder="password"
-						onChange={this.handlePasswordChange}
-					/>
-					<button className="form-button" type="submit">
-						login
-					</button>
-				</form>
+				<div className="container-log">
+					<form className="login-form" onSubmit={this.handleSubmit}>
+						<input
+							className="form-username"
+							placeholder="username"
+							onChange={this.handleNameChange}
+							value={this.state.value}
+							required
+							title="username must be between 8 and 24 characters"
+						/>
+						<input
+							type="password"
+							className={
+								this.state.passOk
+									? 'form-password'
+									: 'form-password  error-password'
+							}
+							placeholder="password"
+							onChange={this.handlePasswordChange}
+							required
+							title="password must be between 8 and 24 characters"
+						/>
+						<button className="form-button" type="submit">
+							{this.state.loading ? (
+								<div className="spinner" />
+							) : (
+								'login'
+							)}
+						</button>
+					</form>
+					{validationError}
+				</div>
 				<div className="checkbox-remember-me">
 					<input
-					  className='form-checkbox'
+						className="form-checkbox"
 						type="checkbox"
 						value="None"
 						id="remember-me"
