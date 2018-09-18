@@ -154,3 +154,14 @@
   background-color: var(--light-purple-darker);
   cursor: pointer;
 }
+
+.logos img:hover {
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+
+.logos img:active {
+  border-radius: 50%;
+  background-color: var(--light-purple);
+}
