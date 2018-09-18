@@ -19,21 +19,20 @@ export default class Login extends Component {
 		let name = this.state.name;
 		if (
 			password.length >= 8 &&
-			password.length <= 24
-			// &&
-			// name.length >= 8 &&
-			// name.length <= 24
+			password.length <= 24 &&
+			name.length > 0 &&
+			name.length <= 24
 		) {
 			this.setState({ loading: true });
 			setTimeout(e => {
 				this.props.logIn();
 			}, 2000);
 		} else {
-			// if (this.state.password.length >= 8 && password.length <= 24) {
-			// 	this.setState({ nameOK: false });
-			// } else {
-			this.setState({ passOk: false });
-			// }
+			if (this.state.password.length >= 8 && password.length <= 24) {
+				this.setState({ nameOk: false, passOk: true });
+			} else {
+				this.setState({ passOk: false });
+			}
 		}
 	};
 
@@ -60,11 +59,15 @@ export default class Login extends Component {
 				<div className="container-log">
 					<form className="login-form" onSubmit={this.handleSubmit}>
 						<input
-							className="form-username"
+							className={
+								this.state.nameOk
+									? 'form-username'
+									: 'form-username error-name'
+							}
 							placeholder="username"
 							onChange={this.handleNameChange}
 							value={this.state.value}
-							required
+							// required
 							title="username must be between 8 and 24 characters"
 						/>
 						<input
@@ -76,7 +79,7 @@ export default class Login extends Component {
 							}
 							placeholder="password"
 							onChange={this.handlePasswordChange}
-							required
+							// required
 							title="password must be between 8 and 24 characters"
 						/>
 						<button className="form-button" type="submit">

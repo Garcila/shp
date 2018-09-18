@@ -21,7 +21,7 @@ class App extends Component {
 	render() {
 		const { loggedIn } = this.state;
 		return (
-			<div className="App">
+			<div className={`App ${this.state.loggedIn ? 'loggedOk' : ''}`}>
 				{loggedIn ? (
 					<LoggedIn logOut={this.logOut} />
 				) : (

@@ -14,7 +14,7 @@ export default class Logo extends Component {
 						</div>
 					</div>
 				</div>
-				<div />
+				{/* <div /> */}
 			</div>
 		);
 	}

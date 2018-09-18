@@ -4,7 +4,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: sans-serif, 'Roboto';
+	font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Roboto, sans-serif;
 }
 
 .App {
@@ -24,6 +24,223 @@
 	max-width: 1440px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	/* grid-template-rows: 1fr; */
-	/* align-content: stretch; */
+	grid-template-areas: "login logo";
+}
+
+
+
+
+@media (max-width: 375px) {
+	.App {
+		grid-template-columns: 1fr;
+		grid-template-rows: 2fr 1fr 1fr 1fr;
+		grid-template-areas:
+			"logo"
+			"login"
+			"login"
+			"login"
+
+	}
+
+	.App .container-log {
+		margin-top: -60px;
+		width: 50%;
+		justify-content: center;
+	}
+
+	.App .login {
+		align-content: space-between;
+	}
+
+	.App .logo-container {
+		grid-template-rows: 1fr;
+		align-items: center;
+		margin-top: -50px;
+	}
+
+	.App .login-form {
+		/* margin-top: -201px; */
+		/* max-height: 173px; */
+		/* z-index: 10; */
+		border-radius: 5px;
+	}
+
+	/* .App .form-username,
+	.App .form-password {
+		padding: 0px 1.5rem;
+		border: none;
+		text-align: center;
+		font-size: 0.8rem;
+		color: var(--dark-purple);
+		font-weight: bold;
+	} */
+
+	/* .App .form-username::placeholder,
+	.App .form-password::placeholder {
+		color: var(--light-purple-darker);
+		font-weight: bold;
+	} */
+
+	.App .error-login {
+		max-width: 100%;
+	}
+
+	/* .App .error-login { */
+	/* top: -10px; */
+	/* max-width: 90%; */
+	/* } */
+
+	/* .App .checkbox-remember-me {
+		margin-top: -150px;
+	} */
+
+	/* .App .logo-container {
+		grid-template-rows: 2fr 2fr;
+	} */
+
+	/* .App .form-button { */
+	/* border-radius: 0 0 5px r */
+	/* } */
+
+	.loggedOk {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.5fr 3fr;
+		background-color: var(--dark-purple);
+	}
+
+	.loggedOk .logo-container {
+		grid-template-rows: 1fr;
+		align-items: center;
+		margin-top: 4px;
+	}
+
+	.loggedOk .logged-in-container {
+		align-items: start;
+		grid-row-start: 2;
+	}
+
+	.loggedOk .success-log {
+		align-self: auto;
+	}
+}
+
+/* ///////////////////////////////////////////// */
+
+
+
+/* ///////////////////////////////////// */
+
+@media (max-width: 320px) {
+	.App {
+		grid-template-columns: 1fr;
+		grid-template-rows: 3fr 1fr 1fr 1fr;
+		grid-template-areas:
+			"logo"
+			"login"
+			"login"
+			"login"
+	}
+
+	.App .container-log {
+		margin-top: -60px;
+		width: 50%;
+		justify-content: center;
+	}
+
+	.App .login {
+		align-content: space-between;
+	}
+
+	/*.App .logo-container {
+		grid-template-rows: 1fr;
+		align-items: center;
+		margin-top: -50px;
+	}*/
+
+	/* .App .login-form {
+		margin-top: -201px;
+		max-height: 173px;
+		z-index: 10;
+	} */
+
+	.App .form-username {
+		border-radius: 5px 5px 0 0;
+	}
+
+	/* .App .form-username,
+	.App .form-password {
+		padding: 0px 1.5rem;
+		border: none;
+		text-align: center;
+		font-size: 0.8rem;
+		color: var(--dark-purple);
+		font-weight: bold;
+	} */
+
+	/* .App .form-username::placeholder,
+	.App .form-password::placeholder {
+		color: var(--light-purple-darker);
+		font-weight: bold;
+	} */
+
+	.App .error-login {
+		max-width: 100%;
+	}
+
+	/* .App .error-login { */
+	/* top: -10px; */
+	/* max-width: 90%; */
+	/* } */
+
+	/* .App .checkbox-remember-me {
+		margin-top: -150px;
+	} */
+
+	.App .form-checkbox:checked::before {
+		font-size: 1rem;
+		left: 1px;
+	}
+
+	/* .App .logo-container {
+		grid-template-rows: 2fr 2fr;
+	} */
+
+	.App .form-button {
+		border-radius: 0 0 5px 5px;
+	}
+
+	.loggedOk {
+		/* grid-template-columns: 1fr; */
+		grid-template-rows: 0.75fr 2fr;
+		/* background-color: var(--dark-purple); */
+	}
+
+	.loggedOk .logo-container {
+		grid-template-rows: 1fr;
+		align-items: end;
+	}
+
+	.loggedOk .logged-in-container {
+		margin-top: 2rem;
+		align-items: center;
+		grid-row-start: 2;
+	}
+
+	.loggedOk .success-log {
+		align-self: start;
+	}
+}
+
+/* ///////////////////////////////////////////// */
+
+.logo {
+	grid-area: logo;
+}
+
+.login {
+	grid-area: login;
+}
+
+.loggedOk {
+	grid-area: loggedOk;
 }
