@@ -4,7 +4,7 @@ import './css/LoggedIn.css';
 export default class LoggedIn extends Component {
 	render() {
 		return (
-			<div className="logged-in-container">
+			<section className="logged-in-container">
 				<div className="success-log">
 					<h2 className="congratulations">Congratulations</h2>
 					<p className="success-log-sentence">
@@ -18,7 +18,7 @@ export default class LoggedIn extends Component {
 				>
 					sign out
 				</button>
-			</div>
+			</section>
 		);
 	}
 }
