@@ -97,6 +97,7 @@
 
 
 .form-checkbox {
+  -webkit-appearance: none;
   appearance: none;
   position: relative;
   background-color: var(--light-purple-lighter);
