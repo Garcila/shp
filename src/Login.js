@@ -43,6 +43,9 @@ export default class Login extends Component {
 
 	handlePasswordChange = e => {
 		const password = e.target.value;
+		password.length < 8
+			? this.setState({ passOk: false })
+			: this.setState({ passOk: true });
 		this.setState({ password });
 	};
 
@@ -67,7 +70,6 @@ export default class Login extends Component {
 							placeholder="username"
 							onChange={this.handleNameChange}
 							value={this.state.value}
-							// required
 							title="username must be between 8 and 24 characters"
 						/>
 						<input
@@ -79,7 +81,6 @@ export default class Login extends Component {
 							}
 							placeholder="password"
 							onChange={this.handlePasswordChange}
-							// required
 							title="password must be between 8 and 24 characters"
 						/>
 						<button className="form-button" type="submit">

@@ -8,9 +8,9 @@
 }
 
 .App {
-	text-align: center;
-	height: 100vh;
-
+	/* -------------------------------------------------
+	Variables
+	---------------------------------------------------- */
 	--white: #fff;
 	--black: #000;
 	--red: #ff0051;
@@ -21,6 +21,9 @@
 	--dark-purple: #7e24fa;
 	--dark-purple-darker: #6624d2;
 
+	text-align: center;
+	height: 100vh;
+
 	max-width: 1440px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -28,9 +31,10 @@
 }
 
 
-
-
-@media (max-width: 375px) {
+/* -------------------------------------------------
+	Media for iPhoneX
+	---------------------------------------------------- */
+@media screen and (max-width: 375px) {
 	.App {
 		grid-template-columns: 1fr;
 		grid-template-rows: 2fr 1fr 1fr 1fr;
@@ -59,48 +63,12 @@
 	}
 
 	.App .login-form {
-		/* margin-top: -201px; */
-		/* max-height: 173px; */
-		/* z-index: 10; */
 		border-radius: 5px;
 	}
-
-	/* .App .form-username,
-	.App .form-password {
-		padding: 0px 1.5rem;
-		border: none;
-		text-align: center;
-		font-size: 0.8rem;
-		color: var(--dark-purple);
-		font-weight: bold;
-	} */
-
-	/* .App .form-username::placeholder,
-	.App .form-password::placeholder {
-		color: var(--light-purple-darker);
-		font-weight: bold;
-	} */
 
 	.App .error-login {
 		max-width: 100%;
 	}
-
-	/* .App .error-login { */
-	/* top: -10px; */
-	/* max-width: 90%; */
-	/* } */
-
-	/* .App .checkbox-remember-me {
-		margin-top: -150px;
-	} */
-
-	/* .App .logo-container {
-		grid-template-rows: 2fr 2fr;
-	} */
-
-	/* .App .form-button { */
-	/* border-radius: 0 0 5px r */
-	/* } */
 
 	.loggedOk {
 		grid-template-columns: 1fr;
@@ -124,13 +92,10 @@
 	}
 }
 
-/* ///////////////////////////////////////////// */
-
-
-
-/* ///////////////////////////////////// */
-
-@media (max-width: 320px) {
+/* -------------------------------------------------
+	Media for iPhone5
+	---------------------------------------------------- */
+@media screen and (max-width: 320px) {
 	.App {
 		grid-template-columns: 1fr;
 		grid-template-rows: 3fr 1fr 1fr 1fr;
@@ -151,68 +116,25 @@
 		align-content: space-between;
 	}
 
-	/*.App .logo-container {
-		grid-template-rows: 1fr;
-		align-items: center;
-		margin-top: -50px;
-	}*/
-
-	/* .App .login-form {
-		margin-top: -201px;
-		max-height: 173px;
-		z-index: 10;
-	} */
-
 	.App .form-username {
 		border-radius: 5px 5px 0 0;
 	}
 
-	/* .App .form-username,
-	.App .form-password {
-		padding: 0px 1.5rem;
-		border: none;
-		text-align: center;
-		font-size: 0.8rem;
-		color: var(--dark-purple);
-		font-weight: bold;
-	} */
-
-	/* .App .form-username::placeholder,
-	.App .form-password::placeholder {
-		color: var(--light-purple-darker);
-		font-weight: bold;
-	} */
-
 	.App .error-login {
 		max-width: 100%;
 	}
-
-	/* .App .error-login { */
-	/* top: -10px; */
-	/* max-width: 90%; */
-	/* } */
-
-	/* .App .checkbox-remember-me {
-		margin-top: -150px;
-	} */
 
 	.App .form-checkbox:checked::before {
 		font-size: 1rem;
 		left: 1px;
 	}
 
-	/* .App .logo-container {
-		grid-template-rows: 2fr 2fr;
-	} */
-
 	.App .form-button {
 		border-radius: 0 0 5px 5px;
 	}
 
 	.loggedOk {
-		/* grid-template-columns: 1fr; */
 		grid-template-rows: 0.75fr 2fr;
-		/* background-color: var(--dark-purple); */
 	}
 
 	.loggedOk .logo-container {
@@ -230,8 +152,6 @@
 		align-self: start;
 	}
 }
-
-/* ///////////////////////////////////////////// */
 
 .logo {
 	grid-area: logo;
