@@ -20,6 +20,7 @@
   box-shadow: 0 2px 14px rgba(202, 174, 242, 1);
 }
 
+/* inputs username and password --------------------*/
 .form-username {
   border-radius: 2px 2px 0 0;
 }
@@ -46,6 +47,8 @@
   color: var(--red);
 }
 
+
+/* button ------------------------------------------*/
 .form-button {
   display: flex;
   justify-content: center;
@@ -79,6 +82,7 @@
   }
 }
 
+/* error -------------------------------------------*/
 .error-login {
   position: absolute;
   top: 130px;
@@ -88,6 +92,7 @@
   justify-self: center;
 }
 
+/* remember me -------------------------------------*/
 .checkbox-remember-me {
   font-size: 2rem;
   display: flex;
@@ -132,6 +137,7 @@
   font-size: 0.8rem;
 }
 
+/* login alternatives Google-Facebook-Twitter ------*/
 .alt-login {
   font-size: 0.7rem;
   display: grid;

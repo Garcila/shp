@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import './css/Login.css';
+
 import facebookLogo from './images/logo-facebook.svg';
 import googleLogo from './images/logo-google.svg';
 import twitterLogo from './images/logo-twitter.svg';
@@ -17,6 +19,9 @@ export default class Login extends Component {
 		e.preventDefault();
 		let password = this.state.password;
 		let name = this.state.name;
+
+		// check length of password and name.  If true proceed
+		// with fake server call via setTimeout
 		if (
 			password.length >= 8 &&
 			password.length <= 24 &&
@@ -43,7 +48,10 @@ export default class Login extends Component {
 
 	handlePasswordChange = e => {
 		const password = e.target.value;
-		password.length < 8
+
+		// give visual information to the user when the length of the
+		// password is out of range
+		password.length < 8 || password.length > 24
 			? this.setState({ passOk: false })
 			: this.setState({ passOk: true });
 		this.setState({ password });
@@ -91,6 +99,7 @@ export default class Login extends Component {
 							)}
 						</button>
 					</form>
+					{/* // show validation error when the password length is out of bounds */}
 					{validationError}
 				</div>
 				<div className="checkbox-remember-me">

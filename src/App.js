@@ -21,6 +21,8 @@ class App extends Component {
 	render() {
 		const { loggedIn } = this.state;
 		return (
+			// Serve component depending on logged status and add class to
+			// provide feedback to the user
 			<div className={`App ${this.state.loggedIn ? 'loggedOk' : ''}`}>
 				{loggedIn ? (
 					<LoggedIn logOut={this.logOut} />

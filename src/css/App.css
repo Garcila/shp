@@ -8,9 +8,7 @@
 }
 
 .App {
-	/* -------------------------------------------------
-	Variables
-	---------------------------------------------------- */
+	/* variables------------------------------------- */
 	--white: #fff;
 	--black: #000;
 	--red: #ff0051;
@@ -31,9 +29,7 @@
 }
 
 
-/* -------------------------------------------------
-	Media for iPhoneX
-	---------------------------------------------------- */
+/* media queries iPhoneX -------------------------- */
 @media screen and (max-width: 375px) {
 	.App {
 		grid-template-columns: 1fr;
@@ -43,7 +39,6 @@
 			"login"
 			"login"
 			"login"
-
 	}
 
 	.App .container-log {
@@ -70,6 +65,7 @@
 		max-width: 100%;
 	}
 
+	/* success login ---------------------------------- */
 	.loggedOk {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1.5fr 3fr;
@@ -92,9 +88,7 @@
 	}
 }
 
-/* -------------------------------------------------
-	Media for iPhone5
-	---------------------------------------------------- */
+/* media queries iPhone5 -------------------------- */
 @media screen and (max-width: 320px) {
 	.App {
 		grid-template-columns: 1fr;
@@ -133,6 +127,7 @@
 		border-radius: 0 0 5px 5px;
 	}
 
+	/* success login ---------------------------------- */
 	.loggedOk {
 		grid-template-rows: 0.75fr 2fr;
 	}
@@ -153,6 +148,8 @@
 	}
 }
 
+
+/* grid areas  ------------------------------------ */
 .logo {
 	grid-area: logo;
 }

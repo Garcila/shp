@@ -7,6 +7,7 @@
   background-color: var(--dark-purple);
 }
 
+/* success section ---------------------------------*/
 .success-log {
   align-self: end;
 }
@@ -20,6 +21,7 @@
   padding-top: 0.5rem;
 }
 
+/* button ------------------------------------------*/
 .sign-out-button {
   background-color: var(--white);
   border: none;
